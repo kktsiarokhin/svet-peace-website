@@ -33,6 +33,7 @@ header {
 
 .logo-img {
   height: 40px;
+  max-height: 40px;
   width: auto;
   border-radius: 4px;
 }
