@@ -26,6 +26,18 @@ header {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  border-radius: 4px;
+}
+
+.logo-text {
   font-size: 1.8rem;
   font-weight: bold;
   color: #2563eb;
@@ -55,6 +67,8 @@ nav a:hover {
   background: linear-gradient(135deg, #e0e7ff 0%, #f1f5f9 100%);
   margin: 0;
 }
+
+
 
 .hero h1 {
   font-size: clamp(2rem, 4vw, 3.5rem);
@@ -311,6 +325,8 @@ footer {
   margin-top: 60px;
 }
 
+
+
 /* Responsive design */
 @media (max-width: 768px) {
   header {
@@ -360,9 +376,15 @@ footer {
 }
 
 @media (max-width: 480px) {
-  .logo {
+  .logo-text {
     font-size: 1.4rem;
   }
+
+  .logo-img {
+    height: 32px;
+  }
+
+
 
   nav {
     flex-wrap: wrap;
