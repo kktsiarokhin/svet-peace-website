@@ -146,10 +146,11 @@ nav a:hover {
 .mini-video {
   background: white;
   border-radius: 12px;
-  padding: 2rem;
+  padding: 0.5rem;
   box-shadow: 0 4px 15px rgba(0,0,0,0.08);
   text-align: center;
   transition: transform 0.3s ease;
+  overflow: hidden;
 }
 
 .mini-video:hover {
@@ -169,6 +170,14 @@ nav a:hover {
   border-radius: 8px;
   object-fit: contain;
   background: #000;
+}
+
+.gif-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  object-fit: cover;
 }
 
 /* Content sections */
@@ -358,7 +367,7 @@ footer {
   }
 
   .mini-video {
-    padding: 1.5rem;
+    padding: 0.4rem;
   }
 
   .content-section {
