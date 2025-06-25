@@ -328,6 +328,100 @@ nav a:hover {
   font-weight: 500;
 }
 
+.article-link {
+  color: #007acc;
+  text-decoration: none;
+  font-size: 0.9em;
+  margin-top: 5px;
+  display: inline-block;
+}
+
+.article-link:hover {
+  text-decoration: underline;
+}
+
+/* Course sections */
+.courses-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 5%;
+}
+
+.courses-section h3 {
+  font-size: 1.8rem;
+  color: #1e293b;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.course-block {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  border-left: 4px solid #2563eb;
+}
+
+.course-block h4 {
+  font-size: 1.4rem;
+  color: #2563eb;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.course-block p {
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.readings-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.reading-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 12px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.reading-item:last-child {
+  border-bottom: none;
+}
+
+.author-block {
+  min-width: 160px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.reading-item .author {
+  font-weight: 600;
+  color: #2563eb;
+  font-size: 0.95rem;
+}
+
+.reading-item .title {
+  color: #64748b;
+  line-height: 1.4;
+  font-size: 0.95rem;
+}
+
+.nobel-note {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #94a3b8;
+  font-style: italic;
+}
+
 .achievements-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -457,6 +551,37 @@ footer {
 
   .featured-quote {
     font-size: 1.2rem;
+  }
+
+  .courses-section {
+    padding: 0 3%;
+    margin: 30px auto;
+  }
+
+  .course-block {
+    padding: 20px;
+  }
+
+  .reading-item {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 10px 0;
+  }
+
+  .author-block {
+    min-width: auto;
+  }
+
+  .reading-item .author {
+    font-size: 0.9rem;
+  }
+
+  .reading-item .title {
+    font-size: 0.9rem;
+  }
+
+  .nobel-note {
+    font-size: 0.7rem;
   }
 }
 
