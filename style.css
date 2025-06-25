@@ -299,6 +299,69 @@ nav a:hover {
     line-height: 1.6;
   }
 
+/* Media highlight and achievements styling */
+.media-highlight {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border-left: 4px solid #2563eb;
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+}
+
+.featured-quote {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  font-style: italic;
+  color: #1e293b;
+  margin: 0 0 1rem 0;
+  font-weight: 500;
+}
+
+.quote-attribution {
+  text-align: right;
+  margin-top: 1rem;
+}
+
+.newspaper-credit {
+  font-size: 0.95rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.achievement-item {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.achievement-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  border-color: #2563eb;
+}
+
+.achievement-item h3 {
+  color: #1e293b;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.achievement-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #475569;
+}
+
 /* Contact section styling */
 .contact-item {
   font-size: 1.1rem;
@@ -382,6 +445,18 @@ footer {
 
   .team-members {
     grid-template-columns: 1fr;
+  }
+
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .media-highlight {
+    padding: 1.5rem;
+  }
+
+  .featured-quote {
+    font-size: 1.2rem;
   }
 }
 
