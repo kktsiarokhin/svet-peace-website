@@ -384,11 +384,12 @@ nav a:hover {
 }
 
 .reading-item {
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 160px 1fr;
   gap: 1rem;
   padding: 12px 0;
   border-bottom: 1px solid #e2e8f0;
+  align-items: start;
 }
 
 .reading-item:last-child {
@@ -396,11 +397,11 @@ nav a:hover {
 }
 
 .author-block {
-  min-width: 160px;
-  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  min-height: 40px;
+  justify-content: flex-start;
 }
 
 .reading-item .author {
@@ -413,6 +414,10 @@ nav a:hover {
   color: #64748b;
   line-height: 1.4;
   font-size: 0.95rem;
+  margin-top: 0;
+  align-self: flex-start;
+  position: relative;
+  top: 0;
 }
 
 .nobel-note {
@@ -563,7 +568,7 @@ footer {
   }
 
   .reading-item {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 0.5rem;
     padding: 10px 0;
   }
