@@ -34,9 +34,14 @@ header {
 .logo-img {
   height: 40px;
   max-height: 40px;
+<<<<<<< HEAD
   width: 40px;
   border-radius: 50%;
   object-fit: cover;
+=======
+  width: auto;
+  border-radius: 4px;
+>>>>>>> 83a96ef50a8b4fba19b2208bc104dddfa3b11481
 }
 
 .logo-text {
@@ -202,6 +207,7 @@ nav a:hover {
   padding: 40px;
 }
 
+<<<<<<< HEAD
 /* Why it works list */
 .why-list {
   margin-top: 1rem;
@@ -235,6 +241,8 @@ nav a:hover {
   font-weight: 700;
 }
 
+=======
+>>>>>>> 83a96ef50a8b4fba19b2208bc104dddfa3b11481
 .content-section h2 {
   font-size: 2rem;
   color: #1e293b;
@@ -641,7 +649,10 @@ footer {
 
   .logo-img {
     height: 32px;
+<<<<<<< HEAD
     width: 32px;
+=======
+>>>>>>> 83a96ef50a8b4fba19b2208bc104dddfa3b11481
   }
 
 
