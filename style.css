@@ -139,56 +139,44 @@ nav a:hover {
   display: block;
 }
 
-/* Mini videos section */
-.mini-videos-section {
-  padding: 60px 5%;
-  background: #f8fafc;
+/* Additional videos section */
+.additional-videos {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.mini-videos-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+.additional-videos .video-container {
+  margin: 0;
+  width: 100%;
 }
 
-.mini-video {
-  background: white;
+.additional-videos video {
+  width: 100%;
+  height: auto;
   border-radius: 12px;
-  padding: 0.5rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  text-align: center;
-  transition: transform 0.3s ease;
-  overflow: hidden;
-}
-
-.mini-video:hover {
-  transform: translateY(-5px);
-}
-
-.mini-video h3 {
-  font-size: 1.4rem;
-  color: #1e293b;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-}
-
-.mini-video video {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  object-fit: contain;
-  background: #000;
-}
-
-.gif-image {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  display: block;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  max-height: 600px;
   object-fit: cover;
 }
+
+/* Class description */
+.class-description {
+  text-align: center;
+  margin: 4rem 0 2rem 0;
+}
+
+.class-description h3 {
+  font-size: 1.8rem;
+  color: #1e293b;
+  font-weight: 600;
+  margin: 0;
+}
+
 
 /* Content sections */
 .content-section {
@@ -529,19 +517,25 @@ footer {
     padding: 40px 5%;
   }
 
-  .mini-videos-section {
-    padding: 40px 5%;
-  }
-
-  .mini-videos-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .additional-videos {
+    gap: 3rem;
+    margin-top: 2rem;
+    padding: 0 5%;
     max-width: 100%;
   }
-
-  .mini-video {
-    padding: 0.4rem;
+  
+  .additional-videos video {
+    max-height: 400px;
   }
+  
+  .class-description {
+    margin: 3rem 0 1.5rem 0;
+  }
+  
+  .class-description h3 {
+    font-size: 1.5rem;
+  }
+
 
   .content-section {
     margin: 40px auto;
