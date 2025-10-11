@@ -1,6 +1,7 @@
 // Donation button functionality
 document.addEventListener('DOMContentLoaded', function() {
     const donateBtn = document.getElementById('donate-btn');
+    const readMoreBtn = document.getElementById('read-more-btn');
     
     if (donateBtn) {
         donateBtn.addEventListener('click', function() {
@@ -9,6 +10,13 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Optional: You can add analytics tracking here
             console.log('Donation button clicked');
+        });
+    }
+
+    if (readMoreBtn) {
+        readMoreBtn.addEventListener('click', function() {
+            // Navigate to the about page
+            window.location.href = 'about.html';
         });
     }
 
@@ -53,6 +61,15 @@ document.addEventListener('DOMContentLoaded', function() {
         section.style.transform = 'translateY(20px)';
         section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(section);
+    });
+
+    // Observe hero additional media blocks so they reveal on scroll
+    const additionalMedia = document.querySelectorAll('.additional-videos .video-container');
+    additionalMedia.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
     });
 
     // Add a simple hover effect to steps
