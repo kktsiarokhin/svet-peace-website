@@ -1337,7 +1337,7 @@ footer {
     margin-bottom: 1.5rem;
   }
 
-  .donate-button {
+  .donate-button, .read-more-button {
     padding: 14px 28px;
     font-size: 0.9rem;
     max-width: 250px;
