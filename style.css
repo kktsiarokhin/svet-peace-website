@@ -952,7 +952,7 @@ footer {
   
   .additional-videos {
     padding: 0 !important;
-    gap: 0 !important;
+    gap: 1rem !important;
   }
   
   /* Stack comparison videos vertically on mobile */
@@ -1051,7 +1051,7 @@ footer {
   }
 
   .additional-videos {
-    gap: 0;
+    gap: 1rem;
     margin-top: 2rem;
     padding: 0 !important;
     max-width: 100%;
@@ -1344,7 +1344,7 @@ footer {
   }
 
   .additional-videos {
-    gap: 0;
+    gap: 1rem;
     margin-top: 1.5rem;
     padding: 0 !important;
   }
