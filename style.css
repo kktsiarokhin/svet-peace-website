@@ -999,8 +999,8 @@ footer {
 
   header {
     flex-direction: column;
-    gap: 1rem;
-    padding: 15px 5%;
+    gap: 0.75rem;
+    padding: 10px 5%;
   }
 
   nav {
@@ -1309,7 +1309,7 @@ footer {
   }
 
   header {
-    padding: 10px 3%;
+    padding: 8px 3%;
   }
 
   nav {
