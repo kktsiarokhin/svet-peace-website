@@ -932,17 +932,27 @@ footer {
   
   /* Fix mobile video/image zoom - optimized for 9:16 portrait format */
   .additional-videos video {
-    object-fit: contain !important;
-    max-height: 600px !important;
-    width: 100%;
-    height: auto;
+    object-fit: cover !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
   }
   
   .additional-videos .info-image {
-    object-fit: contain !important;
-    max-height: 600px !important;
-    width: 100%;
-    height: auto;
+    object-fit: cover !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+  
+  .additional-videos .video-container {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  
+  .additional-videos {
+    padding: 0 !important;
+    gap: 0 !important;
   }
   
   /* Stack comparison videos vertically on mobile */
@@ -1041,18 +1051,20 @@ footer {
   }
 
   .additional-videos {
-    gap: 2rem;
+    gap: 0;
     margin-top: 2rem;
-    padding: 0 5%;
+    padding: 0 !important;
     max-width: 100%;
   }
   
   .additional-videos video {
-    max-height: 300px;
+    max-height: none !important;
+    width: 100% !important;
   }
   
   .additional-videos .info-image {
-    max-height: 300px;
+    max-height: none !important;
+    width: 100% !important;
   }
   
   .svet-note {
@@ -1332,17 +1344,19 @@ footer {
   }
 
   .additional-videos {
-    gap: 1.5rem;
+    gap: 0;
     margin-top: 1.5rem;
-    padding: 0 3%;
+    padding: 0 !important;
   }
   
   .additional-videos video {
-    max-height: 250px;
+    max-height: none !important;
+    width: 100% !important;
   }
   
   .additional-videos .info-image {
-    max-height: 250px;
+    max-height: none !important;
+    width: 100% !important;
   }
 
   .svet-note {
