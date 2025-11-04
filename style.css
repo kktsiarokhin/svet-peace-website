@@ -401,6 +401,7 @@ nav a:hover {
   font-size: 1.1rem;
   color: #475569;
   margin-bottom: 1.2rem;
+  text-align: left;
 }
 
 /* Steps container */
