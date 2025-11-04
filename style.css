@@ -615,6 +615,7 @@ nav a:hover {
   color: #1e293b;
   margin: 0 0 1rem 0;
   font-weight: 500;
+  text-align: left;
 }
 
 .quote-attribution {
@@ -759,6 +760,7 @@ nav a:hover {
   font-size: 1rem;
   line-height: 1.6;
   color: #475569;
+  text-align: left;
 }
 
 /* Contact section styling */
