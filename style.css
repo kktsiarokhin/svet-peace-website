@@ -350,6 +350,10 @@ nav a:hover {
   font-style: italic;
   margin-top: 0.2rem;
   margin-bottom: 2rem;
+  text-align: center !important;
+}
+
+.content-section .svet-note {
   text-align: center;
 }
 
