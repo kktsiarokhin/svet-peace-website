@@ -401,7 +401,7 @@ nav a:hover {
   font-size: 1.1rem;
   color: #475569;
   margin-bottom: 1.2rem;
-  text-align: left;
+  text-align: justify;
 }
 
 /* Steps container */
@@ -546,7 +546,7 @@ nav a:hover {
 }
 
 .board-member p {
-  text-align: left;
+  text-align: justify;
   line-height: 1.6;
   margin: 0;
 }
@@ -595,7 +595,7 @@ nav a:hover {
 }
 
   .team-member p {
-    text-align: left;
+    text-align: justify;
     line-height: 1.6;
   }
 
@@ -615,7 +615,7 @@ nav a:hover {
   color: #1e293b;
   margin: 0 0 1rem 0;
   font-weight: 500;
-  text-align: left;
+  text-align: justify;
 }
 
 .quote-attribution {
@@ -760,7 +760,7 @@ nav a:hover {
   font-size: 1rem;
   line-height: 1.6;
   color: #475569;
-  text-align: left;
+  text-align: justify;
 }
 
 /* Contact section styling */
