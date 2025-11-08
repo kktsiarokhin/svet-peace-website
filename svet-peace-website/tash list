@@ -1,0 +1,154 @@
+[33mcommit b09f8d25914902791886e718d71c432048a15ad7[m
+Author: balafendievam-cyber <balafendievam@gmail.com>
+Date:   Sat Nov 8 13:26:45 2025 -0700
+
+    Update footer docs and course listings
+
+[1mdiff --git a/Files/IRS Determination Letter.pdf b/Files/IRS Determination Letter.pdf[m
+[1mnew file mode 100644[m
+[1mindex 0000000..54c69fc[m
+[1m--- /dev/null[m
+[1m+++ b/Files/IRS Determination Letter.pdf[m	
+[36m@@ -0,0 +1,74 @@[m
+[32m+[m[32mDepartment of the Treasury           Date:[m
+[32m+[m[32mInternal Revenue Service[m
+[32m+[m[32mTax Exempt and Government Entities    08/27/2025[m
+[32m+[m[32mP.O. Box 2508[m
+[32m+[m[32mCincinnati, OH 45201                 Employer ID number:[m
+[32m+[m
+[32m+[m[32mSVET PEACE EDUCATION INITIATIVE INC   39-3453880[m
+[32m+[m[32m530 W 136TH ST - APT 55[m
+[32m+[m[32mNEW YORK, NY 10031                   Person to contact:[m
+[32m+[m
+[32m+[m[32m                                      Name: Ms. Himikel[m
+[32m+[m[32m                                      ID number: 0194579[m
+[32m+[m[32m                                      Telephone: 877-829-5500[m
+[32m+[m
+[32m+[m[32m                                     Accounting period ending:[m
+[32m+[m
+[32m+[m[32m                                      December 31[m
+[32m+[m
+[32m+[m[32m                                     Public charity status:[m
+[32m+[m
+[32m+[m[32m                                      170(b)(1)(A)(vi)[m
+[32m+[m
+[32m+[m[32m                                     Form 990 / 990-EZ / 990-N required:[m
+[32m+[m
+[32m+[m[32m                                      Yes[m
+[32m+[m
+[32m+[m[32m                                     Effective date of exemption:[m
+[32m+[m
+[32m+[m[32m                                      July 23, 2025[m
+[32m+[m
+[32m+[m[32m                                     Contribution deductibility:[m
+[32m+[m
+[32m+[m[32m                                      Yes[m
+[32m+[m
+[32m+[m[32m                                     Addendum applies:[m
+[32m+[m
+[32m+[m[32m                                      No[m
+[32m+[m
+[32m+[m[32m                                     DLN:[m
+[32m+[m
+[32m+[m[32m                                      26053623007505[m
+[32m+[m
+[32m+[m[32mDear Applicant:[m
+[32m+[m
+[32m+[m[32mWe're pleased to tell you we determined you're exempt from federal income tax under Internal Revenue Code[m
+[32m+[m[32m(IRC) Section 501(c)(3). Donors can deduct contributions they make to you under IRC Section 170. You're also[m
+[32m+[m[32mqualified to receive tax deductible bequests, devises, transfers or gifts under Section 2055, 2106, or 2522. This[m
+[32m+[m[32mletter could help resolve questions on your exempt status. Please keep it for your records.[m
+[32m+[m
+[32m+[m[32mOrganizations exempt under IRC Section 501(c)(3) are further classified as either public charities or private[m
+[32m+[m[32mfoundations. We determined you're a public charity under the IRC Section listed at the top of this letter.[m
+[32m+[m
+[32m+[m[32mIf we indicated at the top of this letter that you're required to file Form 990/990-EZ/990-N, our records show[m
+[32m+[m[32myou're required to file an annual information return (Form 990 or Form 990-EZ) or electronic notice (Form[m
+[32m+[m[32m990-N, the e-Postcard). If you don't file a required return or notice for three consecutive years, your exempt[m
+[32m+[m[32mstatus will be automatically revoked.[m
+[32m+[m
+[32m+[m[32mIf we indicated at the top of this letter that an addendum applies, the enclosed addendum is an integral part of[m
+[32m+[m[32mthis letter.[m
+[32m+[m
+[32m+[m[32mFor important information about your responsibilities as a tax-exempt organization, go to www.irs.gov/charities.[m
+[32m+[m[32mEnter "4221-PC" in the search bar to view Publication 4221-PC, Compliance Guide for 501(c)(3) Public[m
+[32m+[m[32mCharities, which describes your recordkeeping, reporting, and disclosure requirements.[m
+[32m+[m
+[32m+[m[32m                                                                    Sincerely,[m
+[32m+[m
+[32m+[m[32mStephen A. Martin[m
+[32m+[m[32mDirector, Exempt Organizations[m
+[32m+[m[32mRulings and Agreements[m
+[32m+[m
+[32m+[m[32m                                     Letter 947 (Rev. 2-2020)[m
+[32m+[m
+[32m+[m[32m                                     Catalog Number 35152P[m
+[32m+[m[32m[m
+[1mdiff --git a/index.html b/index.html[m
+[1mindex 7e1f245..4214141 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -32,6 +32,10 @@[m
+       </div>[m
+       [m
+       <div class="additional-videos">[m
+[32m+[m[32m        <div class="video-container">[m
+[32m+[m[32m          <img src="images/info-22.png" alt="Peace at the Core" class="info-image desktop-image">[m
+[32m+[m[32m          <img src="images/info-22mob.jpg" alt="Peace at the Core" class="info-image mobile-image">[m
+[32m+[m[32m        </div>[m
+         <div class="video-container">[m
+           <video autoplay muted loop playsinline class="desktop-video">[m
+             <source src="images/info-11.mp4" type="video/mp4">[m
+[36m@@ -42,10 +46,6 @@[m
+             Your browser does not support the video tag.[m
+           </video>[m
+         </div>[m
+[31m-        <div class="video-container">[m
+[31m-          <img src="images/info-22.png" alt="Peace at the Core" class="info-image desktop-image">[m
+[31m-          <img src="images/info-22mob.jpg" alt="Peace at the Core" class="info-image mobile-image">[m
+[31m-        </div>[m
+         <div class="video-container">[m
+           <video autoplay muted loop playsinline class="desktop-video">[m
+             <source src="images/info-2.mp4" type="video/mp4">[m
+[36m@@ -74,7 +74,7 @@[m
+         [m
+         <div class="comparison-container">[m
+           <div class="comparison-item">[m
+[31m-            <h3>Traditional Classroom</h3>[m
+[32m+[m[32m            <h3>Modern Classroom</h3>[m
+             <div class="comparison-video">[m
+               <video autoplay muted loop playsinline>[m
+                 <source src="images/Traditional.MOV" type="video/mp4">[m
+[36m@@ -174,74 +174,37 @@[m
+         <h3>Past Courses</h3>[m
+         [m
+         <div class="course-block">[m
+[31m-          <h4>Summer 2024: Eastern European Literature</h4>[m
+[31m-          <p>An intensive exploration of pivotal works that shaped Eastern European consciousness and political thought:</p>[m
+[31m-          [m
+[31m-          <div class="readings-compact">[m
+[31m-            <div class="reading-item">[m
+[31m-              <div class="author-block">[m
+[31m-                <span class="author">Aleksandr Solzhenitsyn</span>[m
+[31m-                <div class="nobel-note">Nobel Prize 1970</div>[m
+[31m-              </div>[m
+[31m-              <span class="title"><em>The Gulag Archipelago</em></span>[m
+[31m-            </div>[m
+[31m-            <div class="reading-item">[m
+[31m-              <div class="author-block">[m
+[31m-                <span class="author">Svetlana Alexievich</span>[m
+[31m-                <div class="nobel-note">Nobel Prize 2015</div>[m
+[31m-              </div>[m
+[31m-              <span class="title"><em>Secondhand Time</em></span>[m
+[31m-            </div>[m
+[31m-            <div class="reading-item">[m
+[31m-              <div class="author-block">[m
+[31m-                <span class="author">Nikolai Ostrovsky</span>[m
+[31m-                <div class="nobel-note" style="visibility: hidden;">&#8203;</div>[m
+[31m-              </div>[m
+[31m-              <span class="title"><em>How the Steel Was Tempered</em></span>[m
+[31m-            </div>[m
+[32m+[m[32m          <p class="course-term">Spring 2025</p>[m
+[32m+[m[32m          <h4>Readings in Russian Short Stories and Poetry</h4>[m
+[32m+[m[32m          <p class="course-description">Through some of the most vivid voices of Russian literature, we explored how questions of beauty, morality, and human destiny are expressed in short form.</p>[m
+[32m+[m[32m          <button type="but
