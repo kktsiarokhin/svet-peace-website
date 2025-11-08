@@ -34,6 +34,10 @@
       
       <div class="additional-videos">
         <div class="video-container">
+          <img src="images/info-22.png" alt="Peace at the Core" class="info-image desktop-image">
+          <img src="images/info-22mob.jpg" alt="Peace at the Core" class="info-image mobile-image">
+        </div>
+        <div class="video-container">
           <video autoplay muted loop playsinline class="desktop-video">
             <source src="images/info-11.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -42,10 +46,6 @@
             <source src="images/Info-1mob.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-        </div>
-        <div class="video-container">
-          <img src="images/info-22.png" alt="Peace at the Core" class="info-image desktop-image">
-          <img src="images/info-22mob.jpg" alt="Peace at the Core" class="info-image mobile-image">
         </div>
         <div class="video-container">
           <video autoplay muted loop playsinline class="desktop-video">
@@ -176,74 +176,37 @@
         <h3>Past Courses</h3>
         
         <div class="course-block">
-          <h4>Summer 2024: Eastern European Literature</h4>
-          <p>An intensive exploration of pivotal works that shaped Eastern European consciousness and political thought:</p>
-          
-          <div class="readings-compact">
-            <div class="reading-item">
-              <div class="author-block">
-                <span class="author">Aleksandr Solzhenitsyn</span>
-                <div class="nobel-note">Nobel Prize 1970</div>
-              </div>
-              <span class="title"><em>The Gulag Archipelago</em></span>
-            </div>
-            <div class="reading-item">
-              <div class="author-block">
-                <span class="author">Svetlana Alexievich</span>
-                <div class="nobel-note">Nobel Prize 2015</div>
-              </div>
-              <span class="title"><em>Secondhand Time</em></span>
-            </div>
-            <div class="reading-item">
-              <div class="author-block">
-                <span class="author">Nikolai Ostrovsky</span>
-                <div class="nobel-note" style="visibility: hidden;">&#8203;</div>
-              </div>
-              <span class="title"><em>How the Steel Was Tempered</em></span>
-            </div>
+          <p class="course-term">Spring 2025</p>
+          <h4>Readings in Russian Short Stories and Poetry</h4>
+          <p class="course-description">Through some of the most vivid voices of Russian literature, we explored how questions of beauty, morality, and human destiny are expressed in short form.</p>
+          <button type="button" class="reading-toggle" aria-expanded="false" aria-controls="spring-2025-reading-list">View reading list</button>
+          <div id="spring-2025-reading-list" class="reading-list" hidden>
+            <ul>
+              <li>Anton Chekhov — <em>Gusev</em>, <em>The House with the Mezzanine</em></li>
+              <li>Yuri Mamleev — <em>The Building Manager Before Death</em></li>
+              <li>Andrei Platonov — <em>Immortality</em></li>
+              <li>Joseph Brodsky — <em>Notes of a Fern</em></li>
+            </ul>
           </div>
         </div>
 
         <div class="course-block">
-          <h4>Fall-Winter 2024: Critical Reading of Early Soviet Theory and Evolution of the Soviet Project</h4>
-          <p>A comprehensive analysis of foundational Soviet theoretical texts and their historical development:</p>
-          
-          <div class="readings-compact">
-            <div class="reading-item">
-              <div class="author-block">
-                <span class="author">Karl Marx</span>
-                <div class="nobel-note" style="visibility: hidden;">&#8203;</div>
-              </div>
-              <span class="title"><em>The Communist Manifesto</em></span>
-            </div>
-            <div class="reading-item">
-              <div class="author-block">
-                <span class="author">Vladimir Lenin</span>
-                <div class="nobel-note" style="visibility: hidden;">&#8203;</div>
-              </div>
-              <span class="title"><em>What Is to Be Done?</em></span>
-            </div>
-            <div class="reading-item">
-              <div class="author-block">
-                <span class="author">Vladimir Lenin</span>
-                <div class="nobel-note" style="visibility: hidden;">&#8203;</div>
-              </div>
-              <span class="title"><em>The State and Revolution</em></span>
-            </div>
-            <div class="reading-item">
-              <div class="author-block">
-                <span class="author">Vladimir Lenin</span>
-                <div class="nobel-note" style="visibility: hidden;">&#8203;</div>
-              </div>
-              <span class="title"><em>Lenin's Testament</em></span>
-            </div>
-            <div class="reading-item">
-              <div class="author-block">
-                <span class="author">Leon Trotsky</span>
-                <div class="nobel-note" style="visibility: hidden;">&#8203;</div>
-              </div>
-              <span class="title"><em>The Permanent Revolution</em></span>
-            </div>
+          <p class="course-term">Fall–Winter 2024</p>
+          <h4>History and Evolution of the Soviet Project</h4>
+          <p class="course-description">A close reading of excerpts from early Soviet and anti-Soviet thinkers exploring the formation, ideals, and contradictions of the Soviet experiment.</p>
+        </div>
+
+        <div class="course-block">
+          <p class="course-term">Summer 2024</p>
+          <h4>Eastern European Literature</h4>
+          <p class="course-description">An intensive exploration of pivotal works that shaped Eastern European consciousness and political thought.</p>
+          <button type="button" class="reading-toggle" aria-expanded="false" aria-controls="summer-2024-reading-list">View reading list</button>
+          <div id="summer-2024-reading-list" class="reading-list" hidden>
+            <ul>
+              <li>Aleksandr Solzhenitsyn — <em>The Gulag Archipelago</em> (Nobel Prize 1970)</li>
+              <li>Svetlana Alexievich — <em>Secondhand Time</em> (Nobel Prize 2015)</li>
+              <li>Nikolai Ostrovsky — <em>How the Steel Was Tempered</em></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -341,8 +304,10 @@ Before coming to St. John's, Amir studied at UWC Dilijan in Armenia, where he en
     <div class="footer-info">
       <p><strong>Svet Peace Education Initiative Inc.</strong></p>
       <p>Registered nonprofit corporation in the State of New Mexico.</p>
-      <p>501(c)(3) status pending with the IRS (Form 1023-EZ filed).</p>
+      <p>Recognized by the IRS as a 501(c)(3) public charity.</p>
+      <p>Donations are tax-deductible under IRS Code Section 170.</p>
       <p>Tax Identification Number (EIN): 39-3453880</p>
+      <p><a href="Files/IRS Determination Letter.pdf" target="_blank" class="footer-link">Download IRS Determination Letter (PDF)</a></p>
       <p><a href="images/EIN IRS Svet.pdf" target="_blank" class="footer-link">Download EIN Confirmation Letter (PDF)</a></p>
       <p><a href="images/Certificate of Incorporation.pdf" target="_blank" class="footer-link">Download Certificate of Incorporation (PDF)</a></p>
     </div>

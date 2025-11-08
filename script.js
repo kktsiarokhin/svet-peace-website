@@ -83,4 +83,28 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.transform = 'translateY(0) scale(1)';
         });
     });
+
+    // Toggle reading lists in courses section
+    const readingToggles = document.querySelectorAll('.reading-toggle');
+    readingToggles.forEach(toggle => {
+        const listId = toggle.getAttribute('aria-controls');
+        const readingList = document.getElementById(listId);
+
+        if (!readingList) {
+            return;
+        }
+
+        toggle.addEventListener('click', () => {
+            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+            toggle.setAttribute('aria-expanded', (!isExpanded).toString());
+
+            if (isExpanded) {
+                readingList.setAttribute('hidden', '');
+                toggle.textContent = 'View reading list';
+            } else {
+                readingList.removeAttribute('hidden');
+                toggle.textContent = 'Hide reading list';
+            }
+        });
+    });
 }); 

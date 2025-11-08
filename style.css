@@ -682,6 +682,56 @@ nav a:hover {
   line-height: 1.6;
 }
 
+.course-term {
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.course-description {
+  margin-bottom: 1.2rem;
+}
+
+.reading-toggle {
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 1rem;
+}
+
+.reading-toggle:hover,
+.reading-toggle:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+.reading-list {
+  margin-top: 1.2rem;
+  padding-left: 1.4rem;
+  color: #475569;
+}
+
+.reading-list ul {
+  list-style: disc;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-left: 1rem;
+}
+
+.reading-list li {
+  line-height: 1.6;
+}
+
 .readings-compact {
   display: flex;
   flex-direction: column;
