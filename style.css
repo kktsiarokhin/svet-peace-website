@@ -645,6 +645,29 @@ nav a:hover {
   text-decoration: underline;
 }
 
+/* Tolstoy quote styling */
+.tolstoy-quote {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  font-style: italic;
+  color: #475569;
+  margin: 2rem 0;
+  border-left: 3px solid #e2e8f0;
+  background: #f8fafc;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  text-align: justify;
+}
+
+.quote-citation {
+  display: block;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  font-style: normal;
+  margin-top: 0.75rem;
+  font-weight: 400;
+}
+
 /* Course sections */
 .courses-section {
   max-width: 1000px;
@@ -1260,6 +1283,16 @@ footer {
     font-size: 1.1rem;
   }
 
+  .tolstoy-quote {
+    font-size: 1.1rem;
+    padding: 1.2rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .quote-citation {
+    font-size: 0.85rem;
+  }
+
   .courses-section {
     padding: 0 3%;
     margin: 30px auto;
@@ -1519,6 +1552,16 @@ footer {
 
   .featured-quote {
     font-size: 1rem;
+  }
+
+  .tolstoy-quote {
+    font-size: 1rem;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+
+  .quote-citation {
+    font-size: 0.8rem;
   }
 
   .course-block {
