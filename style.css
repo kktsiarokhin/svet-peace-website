@@ -65,7 +65,7 @@ nav a:hover {
 /* Hero section */
 .hero {
   text-align: center;
-  padding: 80px 5% 0px;
+  padding: 80px 5% 40px 5%;
   background: transparent;
   margin: 0;
 }
@@ -249,7 +249,7 @@ nav a:hover {
 /* Learning Approach Section */
 .learning-approach-section {
   max-width: 800px;
-  margin: 60px auto;
+  margin: 60px auto 40px auto;
   padding: 40px;
   text-align: center;
   background: white;
@@ -366,6 +366,10 @@ nav a:hover {
   text-align: center;
 }
 
+.glimpse-description:last-child {
+  margin-bottom: 0;
+}
+
 .glimpse-video-container {
   max-width: 750px;
   margin: 0 auto 0 auto;
@@ -385,7 +389,7 @@ nav a:hover {
 /* Content sections */
 .content-section {
   max-width: 800px;
-  margin: 60px auto;
+  margin: 60px auto 40px auto;
   padding: 0 5%;
   background: white;
   border-radius: 12px;
@@ -406,6 +410,18 @@ nav a:hover {
   color: #475569;
   margin-bottom: 1.2rem;
   text-align: justify;
+}
+
+/* Remove bottom margin from last elements in sections */
+.content-section > *:last-child,
+.content-section > *:last-child > *:last-child,
+.learning-approach-section > *:last-child,
+.hero > *:last-child {
+  margin-bottom: 0;
+}
+
+.content-section p:last-child {
+  margin-bottom: 0;
 }
 
 #priorities > p:first-of-type {
@@ -671,7 +687,7 @@ nav a:hover {
 /* Course sections */
 .courses-section {
   max-width: 1000px;
-  margin: 40px auto;
+  margin: 40px auto 40px auto;
   padding: 0 5%;
 }
 
@@ -1147,7 +1163,7 @@ footer {
   }
   
   .learning-approach-section {
-    margin: 30px auto;
+    margin: 30px auto 20px auto;
     padding: 20px;
   }
   
@@ -1200,7 +1216,7 @@ footer {
   }
 
   .hero {
-    padding: 40px 5% 0px;
+    padding: 40px 5% 20px 5%;
   }
 
   .hero h1 {
@@ -1260,7 +1276,7 @@ footer {
   
   .glimpse-description {
     font-size: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
     padding: 0 2%;
   }
   
@@ -1291,7 +1307,7 @@ footer {
   }
 
   .content-section {
-    margin: 30px auto;
+    margin: 30px auto 20px auto;
     padding: 20px;
   }
 
@@ -1462,7 +1478,7 @@ footer {
 
   .courses-section {
     padding: 0 3%;
-    margin: 30px auto;
+    margin: 30px auto 20px auto;
   }
 
   .course-block {
@@ -1519,7 +1535,7 @@ footer {
   }
   
   .learning-approach-section {
-    margin: 20px auto;
+    margin: 20px auto 15px auto;
     padding: 15px;
   }
   
@@ -1581,7 +1597,7 @@ footer {
   }
 
   .hero {
-    padding: 30px 3% 0px;
+    padding: 30px 3% 15px 3%;
   }
 
   .hero h1 {
@@ -1653,7 +1669,7 @@ footer {
   }
 
   .content-section {
-    margin: 20px auto;
+    margin: 20px auto 15px auto;
     padding: 15px;
   }
 
