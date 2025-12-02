@@ -49,6 +49,7 @@ header {
 nav {
   display: flex;
   gap: 2rem;
+  align-items: center;
 }
 
 nav a {
@@ -60,6 +61,29 @@ nav a {
 
 nav a:hover {
   color: #2563eb;
+}
+
+.nav-donate-button {
+  background: #2563eb;
+  color: white !important;
+  border: none;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-left: 0.5rem;
+}
+
+.nav-donate-button:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+  color: white !important;
 }
 
 /* Hero section */
@@ -395,6 +419,16 @@ nav a:hover {
   border-radius: 12px;
   box-shadow: 0 4px 25px rgba(0,0,0,0.08);
   padding: 40px;
+}
+
+/* Fix spacing when content-section is last child in hero */
+.hero > .content-section:last-child {
+  margin-bottom: 0;
+}
+
+/* Fix spacing for section following hero - reduce top margin to match standard spacing */
+.hero + .content-section {
+  margin-top: 40px;
 }
 
 .content-section h2 {
@@ -1208,11 +1242,19 @@ footer {
     gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
   }
 
   nav a {
     font-size: 0.9rem;
     padding: 8px 12px;
+  }
+
+  .nav-donate-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    margin-left: 0;
+    width: auto;
   }
 
   .hero {
@@ -1309,6 +1351,10 @@ footer {
   .content-section {
     margin: 30px auto 20px auto;
     padding: 20px;
+  }
+
+  .hero + .content-section {
+    margin-top: 20px;
   }
 
   .content-section h2 {
@@ -1589,11 +1635,18 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.5rem;
+    width: 100%;
   }
 
   nav a {
     font-size: 0.8rem;
     padding: 6px 10px;
+  }
+
+  .nav-donate-button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    margin-left: 0;
   }
 
   .hero {
@@ -1671,6 +1724,10 @@ footer {
   .content-section {
     margin: 20px auto 15px auto;
     padding: 15px;
+  }
+
+  .hero + .content-section {
+    margin-top: 15px;
   }
 
   .content-section h2 {
