@@ -414,11 +414,10 @@ nav a:hover {
 .content-section {
   max-width: 800px;
   margin: 60px auto 40px auto;
-  padding: 0 5%;
+  padding: 40px;
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 25px rgba(0,0,0,0.08);
-  padding: 40px;
 }
 
 /* Fix spacing when content-section is last child in hero */
@@ -429,6 +428,20 @@ nav a:hover {
 /* Fix spacing for section following hero - reduce top margin to match standard spacing */
 .hero + .content-section {
   margin-top: 40px;
+}
+
+/* Reduce gap between "A glimpse into the atmosphere" and "Why 'Svet'" sections */
+#svet-atmosphere-section {
+  margin-bottom: 24px;
+  padding-bottom: 0;
+}
+
+#svet-atmosphere-section > *:last-child {
+  margin-bottom: 0;
+}
+
+#why-svet-section {
+  margin-top: -8px;
 }
 
 .content-section h2 {
@@ -888,6 +901,89 @@ nav a:hover {
   line-height: 1.6;
   color: #475569;
   text-align: justify;
+}
+
+/* Impact Card - Donation Impact Section */
+.impact-card {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.impact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.impact-item:hover {
+  transform: translateX(5px);
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  min-height: 60px;
+  border-radius: 50%;
+  background: #2563eb;
+  border: 4px solid white;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 3;
+  transition: all 0.3s ease;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+}
+
+.impact-item:hover .icon-circle {
+  background: #1d4ed8;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+  transform: scale(1.05);
+}
+
+.impact-item > div:last-child {
+  flex: 1;
+  padding-top: 0.5rem;
+}
+
+.impact-item h4 {
+  font-size: 1.2rem;
+  color: #1e293b;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.impact-item p {
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+  text-align: left;
+}
+
+.impact-item p a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.impact-item p a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
 }
 
 /* Priorities Vertical Timeline */
@@ -1379,6 +1475,37 @@ footer {
     padding-bottom: 1.25rem;
   }
 
+  .impact-card {
+    padding: 1.5rem;
+    margin-top: 0.75rem;
+    gap: 1.75rem;
+  }
+
+  .impact-item {
+    gap: 1.5rem;
+  }
+
+  .icon-circle {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    font-size: 1.3rem;
+  }
+
+  .impact-item h4 {
+    font-size: 1.1rem;
+  }
+
+  .impact-item p {
+    font-size: 0.95rem;
+  }
+
+  .button-link {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
   .timeline-steps {
     padding: 1.5rem;
     margin-top: 0;
@@ -1750,6 +1877,38 @@ footer {
 
   .timeline-steps {
     padding-bottom: 1rem;
+  }
+
+  .impact-card {
+    padding: 1.25rem;
+    margin-top: 0.5rem;
+    gap: 1.5rem;
+  }
+
+  .impact-item {
+    gap: 1rem;
+  }
+
+  .icon-circle {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    min-height: 45px;
+    font-size: 1.2rem;
+    border-width: 3px;
+  }
+
+  .impact-item h4 {
+    font-size: 1rem;
+  }
+
+  .impact-item p {
+    font-size: 0.9rem;
+  }
+
+  .button-link {
+    padding: 8px 16px;
+    font-size: 0.85rem;
   }
 
   .timeline-steps {

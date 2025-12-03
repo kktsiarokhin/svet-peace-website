@@ -5,10 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (donateBtn) {
         donateBtn.addEventListener('click', function() {
-            // For now, show an alert. Later this can be replaced with actual payment integration
-            alert('Thank you for your interest in supporting our project! Donation functionality will be available soon.');
-            
-            // Optional: You can add analytics tracking here
+            window.open('https://donorbox.org/help-young-people-think-deeply-and-build-peace', '_blank');
             console.log('Donation button clicked');
         });
     }
