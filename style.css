@@ -914,6 +914,84 @@ nav a:hover {
   gap: 2rem;
 }
 
+/* Courses Accordion */
+.courses-accordion-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.course-accordion {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.course-accordion-header {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 1.5rem 2rem;
+  text-align: left;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1e293b;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.course-accordion-header:hover {
+  background-color: rgba(37, 99, 235, 0.05);
+}
+
+.accordion-icon {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #2563eb;
+  transition: transform 0.3s ease;
+}
+
+.course-accordion-content {
+  padding: 0 2rem 2rem 2rem;
+}
+
+.course-accordion-content h3 {
+  font-size: 1.4rem;
+  color: #2563eb;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.course-accordion-content h3:first-child {
+  margin-top: 0;
+}
+
+.course-accordion-content .course-block:first-child {
+  margin-top: 0;
+}
+
+.course-accordion-content p {
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.course-accordion-content a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.course-accordion-content a:hover {
+  text-decoration: underline;
+}
+
 .impact-item {
   display: flex;
   align-items: flex-start;
@@ -1206,6 +1284,32 @@ nav a:hover {
   box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
 }
 
+.button-link {
+  display: inline-block;
+  background: #2563eb;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.button-link:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+/* Offset anchor so section headings are fully visible on scroll */
+#funding-explained {
+  scroll-margin-top: 120px; /* adjust as needed — 100–150px works well */
+}
+
+#evidence-section {
+  scroll-margin-top: 120px;
+}
+
 /* Footer */
 footer {
   text-align: center;
@@ -1479,6 +1583,19 @@ footer {
     padding: 1.5rem;
     margin-top: 0.75rem;
     gap: 1.75rem;
+  }
+
+  .course-accordion-header {
+    padding: 1.25rem 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .course-accordion-content {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+
+  .course-accordion-content h3 {
+    font-size: 1.3rem;
   }
 
   .impact-item {
@@ -1883,6 +2000,24 @@ footer {
     padding: 1.25rem;
     margin-top: 0.5rem;
     gap: 1.5rem;
+  }
+
+  .course-accordion-header {
+    padding: 1rem 1.25rem;
+    font-size: 1.1rem;
+  }
+
+  .course-accordion-content {
+    padding: 0 1.25rem 1.25rem 1.25rem;
+  }
+
+  .course-accordion-content h3 {
+    font-size: 1.2rem;
+    margin-top: 1.25rem;
+  }
+
+  .course-accordion-content p {
+    font-size: 0.95rem;
   }
 
   .impact-item {

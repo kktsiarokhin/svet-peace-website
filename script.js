@@ -104,4 +104,29 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Toggle course accordions
+    const courseAccordions = document.querySelectorAll('.course-accordion-header');
+    courseAccordions.forEach(header => {
+        const contentId = header.getAttribute('aria-controls');
+        const content = document.getElementById(contentId);
+        const icon = header.querySelector('.accordion-icon');
+
+        if (!content) {
+            return;
+        }
+
+        header.addEventListener('click', () => {
+            const isExpanded = header.getAttribute('aria-expanded') === 'true';
+            header.setAttribute('aria-expanded', (!isExpanded).toString());
+
+            if (isExpanded) {
+                content.setAttribute('hidden', '');
+                icon.textContent = '+';
+            } else {
+                content.removeAttribute('hidden');
+                icon.textContent = '−';
+            }
+        });
+    });
 }); 
