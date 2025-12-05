@@ -1202,6 +1202,17 @@ nav a:hover {
   border-bottom: none;
 }
 
+.contact-item a {
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
 .contact-icon {
   font-size: 1.4rem;
   width: 28px;
@@ -1331,20 +1342,20 @@ nav a:hover {
 /* Footer */
 footer {
   text-align: center;
-  padding: 40px 5%;
+  padding: 24px 5%;
   background: #1e293b;
   color: #94a3b8;
   margin-top: 60px;
 }
 
 .footer-info {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .footer-info p {
-  margin: 0.4rem 0;
+  margin: 0.25rem 0;
   font-size: 0.9rem;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .footer-info strong {
@@ -1362,35 +1373,13 @@ footer {
   text-decoration: underline;
 }
 
-.footer-social {
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.footer-social-link {
-  display: inline-flex;
-  align-items: center;
-  color: #60a5fa;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  font-size: 0.9rem;
-}
-
-.footer-social-link:hover {
-  color: #93c5fd;
-  text-decoration: underline;
-}
-
-.footer-social-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 6px;
-  fill: currentColor;
+.footer-info p:nth-child(n+6) {
+  margin: 0.2rem 0;
 }
 
 .copyright {
-  margin-top: 2rem;
-  padding-top: 1.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
   border-top: 1px solid #475569;
 }
 
