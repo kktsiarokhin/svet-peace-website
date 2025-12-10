@@ -13,6 +13,17 @@ body {
   background-attachment: fixed;
 }
 
+/* Global link styling - applies to all links except buttons */
+a:not(.donate-button):not(.read-more-button):not(.button-link):not(.nav-donate-button):not(button) {
+  color: #2563EB !important;
+  text-decoration: underline !important;
+}
+
+a:not(.donate-button):not(.read-more-button):not(.button-link):not(.nav-donate-button):not(button):hover {
+  color: #1D4ED8 !important;
+  text-decoration: underline !important;
+}
+
 /* Header */
 header {
   display: flex;
