@@ -13,13 +13,13 @@ body {
   background-attachment: fixed;
 }
 
-/* Global link styling - applies to all links except buttons */
-a:not(.donate-button):not(.read-more-button):not(.button-link):not(.nav-donate-button):not(button) {
+/* Global link styling - applies to all links except buttons, nav links, contact email, and back button */
+a:not(.donate-button):not(.read-more-button):not(.button-link):not(.nav-donate-button):not(.nav-link):not(.contact-email):not(.back-button):not(button) {
   color: #2563EB !important;
   text-decoration: underline !important;
 }
 
-a:not(.donate-button):not(.read-more-button):not(.button-link):not(.nav-donate-button):not(button):hover {
+a:not(.donate-button):not(.read-more-button):not(.button-link):not(.nav-donate-button):not(.nav-link):not(.contact-email):not(.back-button):not(button):hover {
   color: #1D4ED8 !important;
   text-decoration: underline !important;
 }
@@ -72,6 +72,19 @@ nav a {
 
 nav a:hover {
   color: #2563eb;
+}
+
+/* Navigation links - override global link styling */
+.nav-link {
+  color: #64748b !important;
+  text-decoration: none !important;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #2563eb !important;
+  text-decoration: none !important;
 }
 
 .nav-donate-button {
@@ -1224,6 +1237,16 @@ nav a:hover {
   text-decoration: underline;
 }
 
+/* Contact email - override global link styling */
+.contact-email {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.contact-email:hover {
+  text-decoration: underline !important;
+}
+
 .contact-icon {
   font-size: 1.4rem;
   width: 28px;
@@ -1310,10 +1333,10 @@ nav a:hover {
 .back-button {
   display: inline-block;
   background: #2563eb;
-  color: white;
+  color: white !important;
   padding: 12px 30px;
   border-radius: 8px;
-  text-decoration: none;
+  text-decoration: none !important;
   font-weight: 600;
   transition: all 0.3s ease;
 }
