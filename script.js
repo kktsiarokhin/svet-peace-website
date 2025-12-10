@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (donateBtn) {
         donateBtn.addEventListener('click', function() {
-            window.open('https://donorbox.org/help-young-people-think-deeply-and-build-peace', '_blank');
+            window.open('https://givebutter.com/donatetosvetpeace', '_blank');
             console.log('Donation button clicked');
         });
     }
