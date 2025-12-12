@@ -113,7 +113,7 @@ nav a:hover {
 /* Hero section */
 .hero {
   text-align: center;
-  padding: 80px 5% 40px 5%;
+  padding: 80px 5% 20px 5%;
   background: transparent;
   margin: 0;
   position: relative;
@@ -213,6 +213,28 @@ nav a:hover {
   align-items: center;
 }
 
+/* Hero scroll cue - arrow to the right of Read more button */
+.hero-scroll-cue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0.5rem;
+  color: #2563EB;
+  font-size: 54px;
+  line-height: 1;
+  height: 54px;
+  animation: heroScrollFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes heroScrollFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}
+
 /* Read more button */
 .read-more-button {
   background: transparent;
@@ -278,8 +300,8 @@ nav a:hover {
 .additional-videos {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
-  margin-top: 4rem;
+  gap: 1.5rem;
+  margin-top: 2rem;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -326,7 +348,7 @@ nav a:hover {
 /* Learning Approach Section */
 .learning-approach-section {
   max-width: 800px;
-  margin: 60px auto 40px auto;
+  margin: 30px auto 20px auto;
   padding: 40px;
   text-align: center;
   background: white;
@@ -466,7 +488,7 @@ nav a:hover {
 /* Content sections */
 .content-section {
   max-width: 800px;
-  margin: 60px auto 40px auto;
+  margin: 30px auto 20px auto;
   padding: 40px;
   background: white;
   border-radius: 12px;
@@ -480,22 +502,9 @@ nav a:hover {
 
 /* Fix spacing for section following hero - reduce top margin to match standard spacing */
 .hero + .content-section {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
-/* Reduce gap between "A glimpse into the atmosphere" and "Why 'Svet'" sections */
-#svet-atmosphere-section {
-  margin-bottom: 24px;
-  padding-bottom: 0;
-}
-
-#svet-atmosphere-section > *:last-child {
-  margin-bottom: 0;
-}
-
-#why-svet-section {
-  margin-top: -8px;
-}
 
 .content-section h2 {
   font-size: 2rem;
