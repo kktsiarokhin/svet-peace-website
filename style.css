@@ -17,6 +17,26 @@ body {
   background-attachment: fixed;
 }
 
+/* Single column: all main sections share max-width, centering, and horizontal gutter */
+:root {
+  --site-max-width: 800px;
+  --site-gutter: 40px;
+  /* Vertical rhythm — use these instead of one-off margins (homepage + shared sections) */
+  --section-gap: 2rem; /* between major white section boxes / hero strips */
+  --block-gap: 1.5rem; /* between sibling cards, grid/flex rows, video strip items */
+  --stack-gap: 1.5rem; /* between block groups inside one section (e.g. intro → grid) */
+  --heading-gap: 1.5rem; /* space below h2 / hero h1 before body content */
+  --prose-gap: 1.2rem; /* default gap between paragraphs in .content-section */
+}
+
+.site-container {
+  width: 100%;
+  max-width: var(--site-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
 /* Global link styling - applies to all links except buttons, nav links, contact email, and back button */
 a:not(.donate-button):not(.read-more-button):not(.button-link):not(.nav-donate-button):not(.nav-link):not(.contact-email):not(.back-button):not(button) {
   color: #2563EB !important;
@@ -114,13 +134,20 @@ nav a:hover {
   color: white !important;
 }
 
-/* Hero section */
+/* Hero — same outer width as .content-section.site-container (no horizontal padding on .hero:
+   padding on .hero was shrinking inner cards to ~720px vs 800px white sections below) */
 .hero {
   text-align: center;
-  padding: 80px 5% 20px 5%;
+  /* No padding-bottom: avoids stacking with last .content-section margin + next section margin */
+  padding: 30px 0 0;
   background: transparent;
-  margin: 0;
   position: relative;
+  box-sizing: border-box;
+}
+
+/* Only one section-gap after hero: drop last inner card’s bottom margin (Why “Svet” supplies the gap) */
+.hero > .content-section:last-child {
+  margin-bottom: 0;
 }
 
 /* Scroll cue */
@@ -151,26 +178,75 @@ nav a:hover {
   }
 }
 
-
-
 .hero h1 {
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 700;
   color: #1e293b;
-  margin-bottom: 1rem;
+  margin-bottom: var(--heading-gap);
   line-height: 1.2;
+  padding-left: var(--site-gutter);
+  padding-right: var(--site-gutter);
 }
 
 .hero-subtitle {
-  font-size: 1.3rem;
-  color: #475569;
-  margin-bottom: 2.5rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.7;
+  margin: 0;
   font-weight: 400;
   text-align: center;
+}
+
+/* Unified hero panel: same shell as .learning-approach-section (padding, shadow) */
+.hero-summary-panel {
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--site-gutter);
+  text-align: center;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+.hero-summary-panel .at-a-glance-section {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  width: 100%;
+}
+
+.hero-summary-panel .at-a-glance-grid {
+  max-width: none;
+  width: 100%;
+}
+
+.hero-mission {
+  margin: 0 0 var(--heading-gap);
+  padding: 1.5rem 1.35rem;
+  max-width: none;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.hero-summary-panel .hero-mission.approach-box {
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: var(--heading-gap);
+}
+
+.hero-mission .hero-subtitle {
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  font-weight: 550;
+  color: #475569;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Mission sits in .approach-box; override generic .approach-box p for this paragraph */
+.hero-summary-panel .hero-mission.approach-box .hero-subtitle {
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  font-weight: 550;
+  line-height: 1.6;
+  color: #475569;
 }
 
 .hero-subtitle a {
@@ -206,38 +282,6 @@ nav a:hover {
   box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
 }
 
-/* Hero buttons container */
-.hero-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin: 2.5rem 0;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-/* Hero scroll cue - arrow to the right of Read more button */
-.hero-scroll-cue {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 0.5rem;
-  color: #2563EB;
-  font-size: 54px;
-  line-height: 1;
-  height: 54px;
-  animation: heroScrollFloat 2.5s ease-in-out infinite;
-}
-
-@keyframes heroScrollFloat {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(3px);
-  }
-}
-
 /* Read more button */
 .read-more-button {
   background: transparent;
@@ -261,19 +305,83 @@ nav a:hover {
   box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
 }
 
+/* Hero: 2x2 explanatory grid (primary layer below headline; also inside .hero-summary-panel) */
+.at-a-glance-section {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto var(--stack-gap);
+  padding: 0 2%;
+  box-sizing: border-box;
+}
 
-/* Hero section video container */
+.at-a-glance-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 1.25rem;
+  row-gap: var(--block-gap);
+  max-width: 720px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+/* Slightly smaller card padding than learning-section .approach-box (1.5rem); all else from .approach-box */
+.at-a-glance-section .at-a-glance-card.approach-box {
+  padding: 1.2rem 1.1rem;
+}
+
+.at-a-glance-section .at-a-glance-card {
+  text-align: center;
+  height: 100%;
+  margin: 0;
+}
+
+/* Match donation impact .impact-item p typography */
+.at-a-glance-section .at-a-glance-card p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #64748b;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 640px) {
+  .at-a-glance-section {
+    margin-bottom: var(--stack-gap);
+  }
+
+  .hero-summary-panel .at-a-glance-section {
+    margin-bottom: 0;
+  }
+
+  .at-a-glance-grid {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 1.25rem;
+    max-width: 26rem;
+  }
+
+  .at-a-glance-section .at-a-glance-card p {
+    line-height: 1.6;
+  }
+
+  .hero-summary-panel {
+    padding: var(--site-gutter);
+    margin-bottom: 0;
+  }
+}
+
+/* Video blocks fill the site column (width from .site-container ancestor) */
 .hero .video-container {
-  max-width: 800px;
-  margin: 3rem auto 0;
+  width: 100%;
+  margin: 0 auto;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(0,0,0,0.1);
 }
 
-/* General video container styles */
 .video-container {
-  max-width: 800px;
+  width: 100%;
+  max-width: none;
   margin: 0 auto;
   border-radius: 12px;
   overflow: hidden;
@@ -299,15 +407,13 @@ nav a:hover {
   display: block;
 }
 
-/* Additional videos section */
+/* Additional videos */
 .additional-videos {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 2rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  gap: var(--block-gap);
+  margin-top: var(--section-gap);
+  width: 100%;
 }
 
 /* Desktop/Mobile video switching */
@@ -323,10 +429,6 @@ nav a:hover {
 
 .additional-videos .video-container {
   position: relative;
-}
-
-.additional-videos .video-container {
-  margin: 0;
   width: 100%;
 }
 
@@ -350,13 +452,16 @@ nav a:hover {
 
 /* Learning Approach Section */
 .learning-approach-section {
-  max-width: 800px;
-  margin: 30px auto 20px auto;
-  padding: 40px;
+  margin: var(--section-gap) auto;
+  padding: var(--site-gutter);
   text-align: center;
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+}
+
+.hero .learning-approach-section {
+  margin: var(--section-gap) auto;
 }
 
 
@@ -364,15 +469,15 @@ nav a:hover {
   font-size: 2rem;
   color: #1e293b;
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: var(--heading-gap);
   text-align: center;
 }
 
 .approach-comparison {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: var(--block-gap);
+  margin-bottom: var(--stack-gap);
 }
 
 .approach-box {
@@ -404,8 +509,8 @@ nav a:hover {
 .comparison-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
-  margin-top: 3rem;
+  gap: var(--block-gap);
+  margin-top: var(--stack-gap);
 }
 
 .comparison-item {
@@ -451,7 +556,7 @@ nav a:hover {
   color: #64748b;
   font-style: italic;
   margin-top: 0.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: var(--heading-gap);
   text-align: center !important;
 }
 
@@ -463,7 +568,7 @@ nav a:hover {
   font-size: 1.1rem;
   color: #475569;
   line-height: 1.8;
-  margin-top: 2rem;
+  margin-top: var(--stack-gap);
   margin-bottom: 0;
   text-align: center;
 }
@@ -473,7 +578,8 @@ nav a:hover {
 }
 
 .glimpse-video-container {
-  max-width: 750px;
+  width: 100%;
+  max-width: none;
   margin: 0 auto 0 auto;
   border-radius: 12px;
   overflow: hidden;
@@ -488,31 +594,20 @@ nav a:hover {
 }
 
 
-/* Content sections */
+/* Content sections — width from .site-container; symmetric vertical margin for even gaps (collapse between siblings) */
 .content-section {
-  max-width: 800px;
-  margin: 30px auto 20px auto;
-  padding: 40px;
+  margin: var(--section-gap) auto;
+  padding: var(--site-gutter);
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 25px rgba(0,0,0,0.08);
-}
-
-/* Fix spacing when content-section is last child in hero */
-.hero > .content-section:last-child {
-  margin-bottom: 0;
-}
-
-/* Fix spacing for section following hero - reduce top margin to match standard spacing */
-.hero + .content-section {
-  margin-top: 20px;
 }
 
 
 .content-section h2 {
   font-size: 2rem;
   color: #1e293b;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--heading-gap);
   font-weight: 700;
   text-align: center;
 }
@@ -520,15 +615,14 @@ nav a:hover {
 .content-section p {
   font-size: 1.1rem;
   color: #475569;
-  margin-bottom: 1.2rem;
+  margin-bottom: var(--prose-gap);
   text-align: justify;
 }
 
-/* Remove bottom margin from last elements in sections */
+/* Remove bottom margin from last elements inside sections (not section boxes themselves) */
 .content-section > *:last-child,
 .content-section > *:last-child > *:last-child,
-.learning-approach-section > *:last-child,
-.hero > *:last-child {
+.learning-approach-section > *:last-child {
   margin-bottom: 0;
 }
 
@@ -536,16 +630,16 @@ nav a:hover {
   margin-bottom: 0;
 }
 
-/* Email form section */
-.email-form-section {
-  padding: 60px 20px;
+/* Email form section — same horizontal gutter; vertical padding tied to rhythm */
+.email-form-section.content-section {
+  padding: calc(var(--section-gap) * 1.875) var(--site-gutter);
 }
 
 .email-form-container {
   display: flex;
   justify-content: center;
   width: 100%;
-  max-width: 700px;
+  max-width: none;
   margin: 0 auto;
 }
 
@@ -554,7 +648,7 @@ nav a:hover {
   color: #475569;
   font-weight: normal;
   margin-top: 0;
-  margin-bottom: 1.2rem;
+  margin-bottom: var(--prose-gap);
   text-align: justify;
 }
 
@@ -562,8 +656,8 @@ nav a:hover {
 .steps-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: var(--block-gap);
+  margin-top: var(--stack-gap);
 }
 
 .step {
@@ -615,8 +709,8 @@ nav a:hover {
 .where-we-work {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 2rem;
+  gap: var(--block-gap);
+  margin-top: var(--stack-gap);
 }
 
 .work-location {
@@ -657,8 +751,8 @@ nav a:hover {
 .board-members {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: var(--block-gap);
+  margin-top: var(--stack-gap);
 }
 
 .board-member {
@@ -715,8 +809,8 @@ nav a:hover {
 .team-members {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: var(--block-gap);
+  margin-top: var(--stack-gap);
 }
 
 .team-member {
@@ -783,7 +877,7 @@ nav a:hover {
   }
 
 .founders-social {
-  margin-top: 1.5rem;
+  margin-top: var(--stack-gap);
   font-size: 0.95rem;
   opacity: 0.8;
   text-align: center;
@@ -805,7 +899,7 @@ nav a:hover {
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   border-left: 4px solid #2563eb;
   padding: 2rem;
-  margin: 2rem 0;
+  margin: var(--stack-gap) 0;
   border-radius: 8px;
   transition: all 0.3s ease;
 }
@@ -852,17 +946,18 @@ nav a:hover {
 }
 
 
-/* Course sections */
+/* Course sections (if used standalone) */
 .courses-section {
-  max-width: 1000px;
-  margin: 40px auto 40px auto;
-  padding: 0 5%;
+  max-width: var(--site-max-width);
+  margin: var(--section-gap) auto;
+  padding: 0 var(--site-gutter);
+  box-sizing: border-box;
 }
 
 .courses-section h3 {
   font-size: 1.8rem;
   color: #1e293b;
-  margin-bottom: 2rem;
+  margin-bottom: var(--heading-gap);
   text-align: center;
   font-weight: 700;
 }
@@ -871,7 +966,7 @@ nav a:hover {
   background: white;
   border-radius: 12px;
   padding: 30px;
-  margin-bottom: 2rem;
+  margin-bottom: var(--block-gap);
   box-shadow: 0 4px 15px rgba(0,0,0,0.08);
   border-left: 4px solid #2563eb;
 }
@@ -1008,8 +1103,8 @@ nav a:hover {
 .achievements-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: var(--block-gap);
+  margin-top: var(--stack-gap);
 }
 
 .achievement-item {
@@ -1045,18 +1140,18 @@ nav a:hover {
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   padding: 2rem;
   border-radius: 12px;
-  margin-top: 1rem;
+  margin-top: var(--stack-gap);
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--block-gap);
 }
 
 /* Courses Accordion */
 .courses-accordion-container {
-  margin-top: 2rem;
+  margin-top: var(--stack-gap);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: var(--block-gap);
 }
 
 .course-accordion {
@@ -1116,7 +1211,7 @@ nav a:hover {
 .course-accordion-content p {
   color: #64748b;
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--prose-gap);
 }
 
 .course-accordion-content a {
@@ -1132,7 +1227,7 @@ nav a:hover {
 .impact-item {
   display: flex;
   align-items: flex-start;
-  gap: 2rem;
+  gap: var(--block-gap);
   position: relative;
   transition: all 0.3s ease;
 }
@@ -1203,7 +1298,7 @@ nav a:hover {
 /* Priorities Vertical Timeline */
 .priorities-timeline-vertical {
   position: relative;
-  margin: 1.5rem 0 0.5rem 0;
+  margin: var(--stack-gap) 0 0.5rem 0;
   padding: 0;
   max-width: 100%;
 }
@@ -1222,7 +1317,7 @@ nav a:hover {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--block-gap);
   z-index: 2;
   padding-left: 0;
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
@@ -1235,7 +1330,7 @@ nav a:hover {
 .timeline-step {
   display: flex;
   align-items: flex-start;
-  gap: 2rem;
+  gap: var(--block-gap);
   position: relative;
   transition: all 0.3s ease;
 }
@@ -1359,16 +1454,15 @@ nav a:hover {
   color: #2563eb;
 }
 
-/* About Background Page */
+/* About Background Page — width from .site-container */
 .about-background {
-  max-width: 900px;
-  margin-top: 2rem;
+  margin-top: var(--section-gap);
 }
 
 .about-background h1 {
   font-size: 2.5rem;
   color: #1e293b;
-  margin-bottom: 2rem;
+  margin-bottom: var(--heading-gap);
   text-align: center;
 }
 
@@ -1479,7 +1573,7 @@ footer {
   padding: 24px 5%;
   background: #1e293b;
   color: #94a3b8;
-  margin-top: 60px;
+  margin-top: var(--section-gap);
 }
 
 .footer-info {
@@ -1521,6 +1615,15 @@ footer {
 
 /* Responsive design */
 @media (max-width: 768px) {
+  :root {
+    --site-gutter: 20px;
+    --section-gap: 2rem;
+    --block-gap: 1.5rem;
+    --stack-gap: 1.5rem;
+    --heading-gap: 1.5rem;
+    --prose-gap: 1.2rem;
+  }
+
   /* Show mobile videos/images on small screens */
   .desktop-video,
   .desktop-image {
@@ -1553,30 +1656,34 @@ footer {
   }
   
   .additional-videos {
-    padding: 0 !important;
-    gap: 1rem !important;
+    gap: var(--block-gap) !important;
+    margin-top: var(--section-gap) !important;
   }
   
   /* Stack comparison videos vertically on mobile */
   .comparison-container {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: var(--block-gap);
   }
   
   .learning-approach-section {
-    margin: 30px auto 20px auto;
-    padding: 20px;
+    margin: var(--section-gap) auto;
+    padding: var(--site-gutter);
+  }
+
+  .hero .learning-approach-section {
+    margin: var(--section-gap) auto;
   }
   
   .learning-approach-section h2 {
     font-size: 1.6rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--heading-gap);
   }
   
   .approach-comparison {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    gap: var(--block-gap);
+    margin-bottom: var(--stack-gap);
   }
   
   .approach-emoji {
@@ -1625,35 +1732,56 @@ footer {
   }
 
   .hero {
-    padding: 40px 5% 20px 5%;
+    padding: 30px 0 0;
   }
 
   .hero h1 {
     font-size: 2.2rem;
     line-height: 1.1;
+    margin-bottom: var(--heading-gap);
   }
 
-  .hero-subtitle {
-    font-size: 1.15rem;
-    margin-bottom: 2rem;
-    max-width: 100%;
-    padding: 0 2%;
-    line-height: 1.6;
+  .at-a-glance-section {
+    margin-bottom: 1.75rem;
+    padding: 0 4%;
   }
 
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin: 2rem 0;
+  /* Mobile: cards first, mission last (flex order); desktop unchanged */
+  .hero-summary-panel .at-a-glance-section {
+    order: 1;
+    margin-bottom: 0;
+    padding: 0;
   }
 
-  .donate-button, .read-more-button {
-    padding: 16px 32px;
+  .at-a-glance-section .at-a-glance-card.approach-box {
+    padding: 1.05rem 1rem;
+  }
+
+  .at-a-glance-section .at-a-glance-card p {
     font-size: 1rem;
-    width: 100%;
-    max-width: 280px;
-    min-width: auto;
+  }
+
+  .hero-summary-panel {
+    display: flex;
+    flex-direction: column;
+    padding: var(--site-gutter);
+    margin-bottom: 0;
+  }
+
+  .hero-mission {
+    padding: 1.35rem 1.15rem;
+  }
+
+  .hero-summary-panel .hero-mission.approach-box {
+    order: 2;
+    margin-top: var(--heading-gap);
+    margin-bottom: 0;
+  }
+
+  .hero-mission .hero-subtitle {
+    font-size: 1.1rem;
+    font-weight: 550;
+    line-height: 1.6;
   }
 
   .video-section {
@@ -1661,9 +1789,8 @@ footer {
   }
 
   .additional-videos {
-    gap: 1rem;
-    margin-top: 2rem;
-    padding: 0 !important;
+    gap: var(--block-gap);
+    margin-top: var(--section-gap);
     max-width: 100%;
   }
   
@@ -1680,7 +1807,7 @@ footer {
   .svet-note {
     font-size: 0.85rem;
     margin-top: 0.15rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--heading-gap);
   }
   
   .glimpse-description {
@@ -1716,12 +1843,8 @@ footer {
   }
 
   .content-section {
-    margin: 30px auto 20px auto;
-    padding: 20px;
-  }
-
-  .hero + .content-section {
-    margin-top: 20px;
+    margin: var(--section-gap) auto;
+    padding: var(--site-gutter);
   }
 
   .content-section h2 {
@@ -1735,11 +1858,11 @@ footer {
   #priorities > p:first-of-type {
     font-size: 1rem;
     margin-top: 0;
-    margin-bottom: 1.2rem;
+    margin-bottom: var(--prose-gap);
   }
 
   .priorities-timeline-vertical {
-    margin: 1rem 0 0.5rem 0;
+    margin: var(--stack-gap) 0 0.5rem 0;
   }
 
   .timeline-steps {
@@ -1748,8 +1871,8 @@ footer {
 
   .impact-card {
     padding: 1.5rem;
-    margin-top: 0.75rem;
-    gap: 1.75rem;
+    margin-top: var(--stack-gap);
+    gap: var(--block-gap);
   }
 
   .course-accordion-header {
@@ -1766,7 +1889,7 @@ footer {
   }
 
   .impact-item {
-    gap: 1.5rem;
+    gap: var(--block-gap);
   }
 
   .icon-circle {
@@ -1803,7 +1926,7 @@ footer {
 
   .steps-container {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: var(--block-gap);
   }
 
   .step {
@@ -1811,7 +1934,7 @@ footer {
   }
 
   .where-we-work {
-    gap: 1rem;
+    gap: var(--block-gap);
   }
 
   .work-location {
@@ -1830,14 +1953,14 @@ footer {
   }
 
   .board-members {
-    gap: 1.5rem;
+    gap: var(--block-gap);
   }
 
   .board-member {
     padding: 1.5rem;
     flex-direction: column;
     text-align: center;
-    gap: 1rem;
+    gap: var(--block-gap);
   }
 
   .board-member-image {
@@ -1860,7 +1983,7 @@ footer {
 
   .team-members {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: var(--block-gap);
   }
 
   .team-member {
@@ -1874,12 +1997,12 @@ footer {
 
   .achievements-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: var(--block-gap);
   }
 
   .priorities-timeline-vertical {
-    margin: 2rem 0;
-    padding: 1.5rem 0;
+    margin: var(--stack-gap) 0;
+    padding: var(--stack-gap) 0;
   }
 
   .timeline-vertical-line {
@@ -1890,15 +2013,12 @@ footer {
 
   .timeline-steps {
     padding: 1.5rem;
-    margin-top: 0.75rem;
-  }
-
-  .timeline-steps {
-    gap: 1.75rem;
+    margin-top: var(--stack-gap);
+    gap: var(--block-gap);
   }
 
   .timeline-step {
-    gap: 1.5rem;
+    gap: var(--block-gap);
   }
 
   .timeline-node-vertical {
@@ -1926,7 +2046,7 @@ footer {
 
   .media-highlight {
     padding: 1.2rem;
-    margin: 1.5rem 0;
+    margin: var(--stack-gap) 0;
   }
 
   .featured-quote {
@@ -1934,13 +2054,13 @@ footer {
   }
 
   .courses-section {
-    padding: 0 3%;
-    margin: 30px auto 20px auto;
+    padding: 0 var(--site-gutter);
+    margin: var(--section-gap) auto;
   }
 
   .course-block {
     padding: 15px;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--block-gap);
   }
 
   .course-block h4 {
@@ -1982,6 +2102,15 @@ footer {
 }
 
 @media (max-width: 480px) {
+  :root {
+    --site-gutter: 15px;
+    --section-gap: 2rem;
+    --block-gap: 1.5rem;
+    --stack-gap: 1.5rem;
+    --heading-gap: 1.5rem;
+    --prose-gap: 1.2rem;
+  }
+
   /* Optimized for 9:16 portrait format on smaller screens */
   .additional-videos video {
     max-height: 550px !important;
@@ -1992,18 +2121,22 @@ footer {
   }
   
   .learning-approach-section {
-    margin: 20px auto 15px auto;
-    padding: 15px;
+    margin: var(--section-gap) auto;
+    padding: var(--site-gutter);
+  }
+
+  .hero .learning-approach-section {
+    margin: var(--section-gap) auto;
   }
   
   .learning-approach-section h2 {
     font-size: 1.4rem;
-    margin-bottom: 1rem;
+    margin-bottom: var(--heading-gap);
   }
   
   .approach-comparison {
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+    gap: var(--block-gap);
+    margin-bottom: var(--stack-gap);
   }
   
   .approach-emoji {
@@ -2061,29 +2194,61 @@ footer {
   }
 
   .hero {
-    padding: 30px 3% 15px 3%;
+    padding: 20px 0 0;
   }
 
   .hero h1 {
     font-size: 1.8rem;
     line-height: 1.1;
+    margin-bottom: var(--heading-gap);
   }
 
-  .hero-subtitle {
-    font-size: 1rem;
+  .at-a-glance-section {
     margin-bottom: 1.5rem;
+    padding: 0 3%;
   }
 
-  .donate-button, .read-more-button {
-    padding: 14px 28px;
-    font-size: 0.9rem;
-    max-width: 250px;
+  .hero-summary-panel .at-a-glance-section {
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  .at-a-glance-grid {
+    row-gap: 1.15rem;
+  }
+
+  .at-a-glance-section .at-a-glance-card.approach-box {
+    padding: 1rem 0.95rem;
+  }
+
+  .at-a-glance-section .at-a-glance-card p {
+    font-size: 1rem;
+  }
+
+  .hero-summary-panel {
+    padding: var(--site-gutter);
+    margin-bottom: 0;
+  }
+
+  .hero-mission {
+    padding: 1.2rem 1rem;
+  }
+
+  .hero-summary-panel .hero-mission.approach-box {
+    order: 2;
+    margin-top: var(--heading-gap);
+    margin-bottom: 0;
+  }
+
+  .hero-mission .hero-subtitle {
+    font-size: 1rem;
+    font-weight: 550;
+    line-height: 1.6;
   }
 
   .additional-videos {
-    gap: 1rem;
-    margin-top: 1.5rem;
-    padding: 0 !important;
+    gap: var(--block-gap);
+    margin-top: var(--section-gap);
   }
   
   .additional-videos video {
@@ -2099,7 +2264,7 @@ footer {
   .svet-note {
     font-size: 0.8rem;
     margin-top: 0.15rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: var(--heading-gap);
   }
   
   .glimpse-description {
@@ -2133,12 +2298,8 @@ footer {
   }
 
   .content-section {
-    margin: 20px auto 15px auto;
-    padding: 15px;
-  }
-
-  .hero + .content-section {
-    margin-top: 15px;
+    margin: var(--section-gap) auto;
+    padding: var(--site-gutter);
   }
 
   .content-section h2 {
@@ -2152,11 +2313,11 @@ footer {
   #priorities > p:first-of-type {
     font-size: 0.95rem;
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: var(--prose-gap);
   }
 
   .priorities-timeline-vertical {
-    margin: 0.75rem 0 0.5rem 0;
+    margin: var(--stack-gap) 0 0.5rem 0;
   }
 
   .timeline-steps {
@@ -2165,8 +2326,8 @@ footer {
 
   .impact-card {
     padding: 1.25rem;
-    margin-top: 0.5rem;
-    gap: 1.5rem;
+    margin-top: var(--stack-gap);
+    gap: var(--block-gap);
   }
 
   .course-accordion-header {
@@ -2188,7 +2349,7 @@ footer {
   }
 
   .impact-item {
-    gap: 1rem;
+    gap: var(--block-gap);
   }
 
   .icon-circle {
@@ -2211,11 +2372,6 @@ footer {
   .button-link {
     padding: 8px 16px;
     font-size: 0.85rem;
-  }
-
-  .timeline-steps {
-    padding: 1.25rem;
-    margin-top: 0;
   }
 
   .timeline-vertical-line {
@@ -2280,8 +2436,8 @@ footer {
   }
 
   .priorities-timeline-vertical {
-    margin: 1.5rem 0;
-    padding: 1rem 0;
+    margin: var(--stack-gap) 0;
+    padding: var(--stack-gap) 0;
   }
 
   .timeline-vertical-line {
@@ -2292,15 +2448,12 @@ footer {
 
   .timeline-steps {
     padding: 1.25rem;
-    margin-top: 0.5rem;
-  }
-
-  .timeline-steps {
-    gap: 1.5rem;
+    margin-top: var(--stack-gap);
+    gap: var(--block-gap);
   }
 
   .timeline-step {
-    gap: 1rem;
+    gap: var(--block-gap);
   }
 
   .timeline-node-vertical {
