@@ -356,12 +356,23 @@ nav a:hover {
   .at-a-glance-grid {
     grid-template-columns: 1fr;
     column-gap: 0;
-    row-gap: 1.25rem;
-    max-width: 26rem;
+    /* Tighter spacing + full width so all 4 cards fit without excessive wrapping */
+    row-gap: 0.55rem;
+    max-width: none;
+  }
+
+  .at-a-glance-section .at-a-glance-card.approach-box {
+    padding: 0.8rem 0.75rem;
+  }
+
+  .at-a-glance-section .at-a-glance-card .approach-emoji {
+    margin-bottom: 0.55rem;
+    font-size: 1.6rem;
   }
 
   .at-a-glance-section .at-a-glance-card p {
-    line-height: 1.6;
+    line-height: 1.4;
+    font-size: 0.95rem;
   }
 
   .hero-summary-panel {
